@@ -3,7 +3,8 @@
 int func(int i)
 {
   int count = 0;
-  for (int j = 2; j<= ceil(sqrt( (float) i)) ; j++)
+  int j;
+  for (j = 2; j<= ceil(sqrt( (float) i)) ; j++)
   {
     
     if(i%j == 0)
