@@ -212,4 +212,4 @@ for key in numerical:
         print("Type error of answer %s (should be a numerical value)" % key)
 for key in wordy:
     if type(wordy[key]) is not str:
-        print("Type error or answer %s (should be a string)" % key)
+        print("Type error of answer %s (should be a string)" % key)
