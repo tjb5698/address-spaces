@@ -7,7 +7,7 @@ Remember to add you PSU ID (e.g. xyz1234) in the dedicated variable.
 
 Once you think you have answered every question, run the script with the command
 
-    python3 answers.py
+    python answers.py
 
 If you you do not get any error message, it means that your answers are all of the right type (not necessarily that they are correct).
 
@@ -19,9 +19,9 @@ All the program executions are to be performed on the CSE lab machines (`cse-p20
 
 # Due date & Submission
 
-This assignment is due on January 31st, 2019 at 23:59pm. Make sure to push your final commit to Github on the `master` branch before this date, as we will ignore anything that is commited after. 
+This assignment is due on January 31st, 2019 at 23:59pm. Make sure to push your final commit to Github on the `master` branch before this date, as we will ignore anything that is commited after.
 
-If you have any issues with Github, come to Office Hours as soon as you can, so that we can help you solve them. 
+If you have any issues with Github, come to Office Hours as soon as you can, so that we can help you solve them.
 
-Remember to commit and push often to Github, as it will guarantee you a backup and a history of your project. 
+Remember to commit and push often to Github, as it will guarantee you a backup and a history of your project.
 
