@@ -24,7 +24,6 @@ wordy = {
 numerical = {
     "1a": None,
     "1c": None,
-    "1cbis": None,
     "2ai32": None,
     "2aii32": None,
     "2aiii32": None,
@@ -63,15 +62,10 @@ numerical["1a"] = None
 #   grow on your system?
 wordy["1b"] = None
 
-# (1.c.heap) What is the size of the process heap when it
+# (1.c) What is the size of the process heap when it
 #   is waiting for user input?
 #   Enter your answer in bytes.
 numerical["1c"] = None
-
-# (1.c.stack) What is the size of the process stack when it
-#   is waiting for user input?
-#   Enter your answer in bytes.
-numerical["1cbis"] = None
 
 # (1.d) What are the address limits of the stack and the heap?
 wordy["1d"] = None
