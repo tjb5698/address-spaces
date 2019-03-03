@@ -11,8 +11,7 @@ void allocate(int count,int r)
   if(count >= 0)
   {
     b = malloc(pow(10,r)*sizeof(int));
-    int i;
-    for (i = 0 ;i<sizeof(b) ; i++)
+    for (int i = 0 ;i<sizeof(b) ; i++)
     {
       char *ch1;
       ch1 = &b[i];
