@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/time.h>
+#include <sys/resource.h>
 #include "check.h"
 
 int x[5] = {1,2,3,4,5};
@@ -40,11 +42,18 @@ void allocate2()
   }
 }
 
+//int getrusage(int, struct rusage); 
 
 int main(int argc, char const *argv[]) {
   int i;
   int *p;
+  struct rusage usage;
+  struct timeval ustart, uend, sstart,send;
   printf("Executing the code ......\n");
+  getrusage(RUSAGE_SELF, &usage);
+  ustart = usage.ru_utime;
+  sstart = usage.ru_stime;
+
   allocate();
 
   for (i=0 ; i<10000 ; i++)
@@ -52,6 +61,20 @@ int main(int argc, char const *argv[]) {
     p = malloc(1000 * sizeof(int));
     free (p);
   }
+
+  getrusage(RUSAGE_SELF, &usage);
+  uend = usage.ru_utime;
+  send = usage.ru_stime;
+  
+  printf("User CPU start time: %ld.%lds\n", ustart.tv_sec, ustart.tv_usec); 
+  printf("System CPU start time: %ld.%lds\n", sstart.tv_sec, sstart.tv_usec); 
+  printf("User CPU end time: %ld.%lds\n", uend.tv_sec, uend.tv_usec); 
+  printf("System CPU end time: %ld.%lds\n", send.tv_sec, send.tv_usec);  
+  printf("Maximum RSS: %ld KB\n", usage.ru_maxrss);
+  printf("Signals Received: %ld\n", usage.ru_nsignals);
+  printf("Voluntary Context Switches: %ld\n", usage.ru_nvcsw);
+  printf("Involuntary Context Switches: %ld\n", usage.ru_nivcsw); 
+  
   printf("Program execution successfull\n");
   return 0;
 }
